@@ -22,7 +22,7 @@ const shoppingListReducer = createReducer(
   })),
   on(ShoppingListActions.AddIngredients, (state, { ingredients }) => ({
     ...state,
-    ...ingredients
+    ingredients: [...state.ingredients, ...ingredients]
   })),
   on(ShoppingListActions.UpdateIngredient, (state, { ingredient }) => {
     const updatedIngredient = {
